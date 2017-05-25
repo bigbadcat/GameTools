@@ -114,17 +114,15 @@ namespace T008
         }
 
         /// <summary>
-        /// 初始化导出信息项。
+        /// 设置操作按钮是否可用。
         /// </summary>
-        /// <param name="node">分组节点。</param>
-        /// <param name="infos">导出项。</param>
-        private void InitExprotItem(TreeNode node, List<ExportInfo> infos)
+        /// <param name="enabled">是否可用。</param>
+        public void SetButtonEnabled(bool enabled)
         {
-            foreach (var info in infos)
-            {
-                TreeNode item = node.Nodes.Add(info.Name);
-                item.Tag = string.Format("{0}\\{1}", info.GroupName, info.Name);
-            }
+            btnRefresh.Enabled = enabled;
+            btnEnum.Enabled = enabled;
+            btnExport.Enabled = enabled;
+            btnBuildScript.Enabled = enabled;
         }
 
         #endregion
@@ -281,6 +279,7 @@ namespace T008
             pbExport.Value = 0;
             pbExport.Visible = false;
             rtbLog.Clear();
+            SetButtonEnabled(false);
 
             //加载最近打开的配置
             string filename = GetLastOpenFileName();            
@@ -290,6 +289,7 @@ namespace T008
                 if (ConfigArchive.Instance.Load(filename))
                 {
                     SaveLastOpenFileName(filename);
+                    SetButtonEnabled(true);
                     Log("打开配置文件:\n{0}", filename);
                 }
                 else
@@ -331,6 +331,7 @@ namespace T008
             if (ConfigArchive.Instance.Load(filename))
             {
                 SaveLastOpenFileName(filename);
+                SetButtonEnabled(true);
                 Log("打开配置文件:\n{0}", filename);
             }
             else
@@ -346,10 +347,12 @@ namespace T008
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             string filename = fibConfig.InputValue;
-            if (ConfigArchive.Instance.Load(filename))
+            bool ok = ConfigArchive.Instance.Load(filename);
+            SetButtonEnabled(ok);
+            if (ok)
             {
                 SaveLastOpenFileName(filename);
-                RefreshExportTree();
+                RefreshExportTree();                
                 Log("打开配置文件:\n{0}", filename);
             }
             else
