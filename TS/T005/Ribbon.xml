@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui" onLoad="Ribbon_Load">
+  <ribbon>
+    <tabs>
+      <tab idMso="TabAddIns" label="插件工具">
+        <group id="gpExportCSV1" label="导出CSV.1">
+          <button id="btnExportCSVSet1" imageMso="FileOpen" onAction="btnExportCSVSet1_Click" supertip="设置CSV.1文件导出的文件夹" label="位置" size="large" />
+          <button id="btnExportCSVExport1" imageMso="OrgChartReportMoveRight" onAction="btnExportCSVExport1_Click" supertip="导出当前表格" label="导出" size="large" />
+        </group>
+        <group id="gpExportCSV2" label="导出CSV.2">
+          <button id="btnExportCSVSet2" imageMso="FileOpen" onAction="btnExportCSVSet2_Click" supertip="设置CSV.2文件导出的文件夹" label="位置" size="large" />
+          <button id="btnExportCSVExport2" imageMso="OrgChartReportMoveRight" onAction="btnExportCSVExport2_Click" supertip="导出当前表格" label="导出" size="large" />
+        </group>
+      </tab>
+    </tabs>
+  </ribbon>
+</customUI>
+

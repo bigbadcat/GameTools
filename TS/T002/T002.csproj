@@ -1,0 +1,314 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9C2E5C8E-2E5D-42D7-97AC-2072B46F4198}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>T002</RootNamespace>
+    <AssemblyName>T002</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WeifenLuo.WinFormsUI.Docking">
+      <HintPath>.\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\DiskWork.cs" />
+    <Compile Include="Data\InterfaceFile.cs" />
+    <Compile Include="Data\ProjectManager.cs" />
+    <Compile Include="Data\ResourceFile.cs" />
+    <Compile Include="Data\RevokeRedo.cs" />
+    <Compile Include="Data\RevokeRedoManager.cs" />
+    <Compile Include="Data\UI\Align.cs" />
+    <Compile Include="Data\UI\Button.cs" />
+    <Compile Include="Data\UI\CheckButton.cs" />
+    <Compile Include="Data\UI\ConstVarValue.cs" />
+    <Compile Include="Data\UI\Container.cs" />
+    <Compile Include="Data\UI\Control.cs" />
+    <Compile Include="Data\UI\ImageNumber.cs" />
+    <Compile Include="Data\UI\InputType.cs" />
+    <Compile Include="Data\UI\Label.cs" />
+    <Compile Include="Data\UI\LabelType.cs" />
+    <Compile Include="Data\UI\NumberImage.cs" />
+    <Compile Include="Data\UI\PageTable.cs" />
+    <Compile Include="Data\UI\ParticleView.cs" />
+    <Compile Include="Data\UI\ProgressBar.cs" />
+    <Compile Include="Data\UI\ProgressDirection.cs" />
+    <Compile Include="Data\UI\RadioButton.cs" />
+    <Compile Include="Data\UI\RadioButtonGroup.cs" />
+    <Compile Include="Data\UI\ScrollPanel.cs" />
+    <Compile Include="Data\UI\ScrollTable.cs" />
+    <Compile Include="Data\UI\SingleButton.cs" />
+    <Compile Include="Data\UI\SliderBar.cs" />
+    <Compile Include="Data\UI\Table.cs" />
+    <Compile Include="Data\UI\TextArea.cs" />
+    <Compile Include="Data\UI\TextBox.cs" />
+    <Compile Include="Data\UI\TextControl.cs" />
+    <Compile Include="Data\UI\SpineView.cs" />
+    <Compile Include="Forms\ControlEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ControlEditForm.Designer.cs">
+      <DependentUpon>ControlEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\HelpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HelpForm.Designer.cs">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\InterfaceListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InterfaceListForm.Designer.cs">
+      <DependentUpon>InterfaceListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\InterfacePropertyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InterfacePropertyForm.Designer.cs">
+      <DependentUpon>InterfacePropertyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NewControlForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NewControlForm.Designer.cs">
+      <DependentUpon>NewControlForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\UI\Direction.cs" />
+    <Compile Include="Data\UI\ImageMode.cs" />
+    <Compile Include="Data\UI\LineMode.cs" />
+    <Compile Include="Data\UI\Picture.cs" />
+    <Compile Include="Data\UI\Trans.cs" />
+    <Compile Include="Data\UI\UserInterface.cs" />
+    <Compile Include="Forms\AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ControlPropertyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ControlPropertyForm.Designer.cs">
+      <DependentUpon>ControlPropertyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\InterfaceFileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InterfaceFileForm.Designer.cs">
+      <DependentUpon>InterfaceFileForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NewInterfaceFileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NewInterfaceFileForm.Designer.cs">
+      <DependentUpon>NewInterfaceFileForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NewProjectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NewProjectForm.Designer.cs">
+      <DependentUpon>NewProjectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProjectPropertyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProjectPropertyForm.Designer.cs">
+      <DependentUpon>ProjectPropertyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ResourceFileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ResourceFileForm.Designer.cs">
+      <DependentUpon>ResourceFileForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProjectManageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProjectManageForm.Designer.cs">
+      <DependentUpon>ProjectManageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WorkAssistantForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WorkAssistantForm.Designer.cs">
+      <DependentUpon>WorkAssistantForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Platform\Canvas.cs" />
+    <Compile Include="Platform\Image.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ControlEditForm.resx">
+      <DependentUpon>ControlEditForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ControlPropertyForm.resx">
+      <DependentUpon>ControlPropertyForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HelpForm.resx">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InterfaceFileForm.resx">
+      <DependentUpon>InterfaceFileForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InterfaceListForm.resx">
+      <DependentUpon>InterfaceListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InterfacePropertyForm.resx">
+      <DependentUpon>InterfacePropertyForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NewControlForm.resx">
+      <DependentUpon>NewControlForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NewInterfaceFileForm.resx">
+      <DependentUpon>NewInterfaceFileForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NewProjectForm.resx">
+      <DependentUpon>NewProjectForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProjectManageForm.resx">
+      <DependentUpon>ProjectManageForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProjectPropertyForm.resx">
+      <DependentUpon>ProjectPropertyForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ResourceFileForm.resx">
+      <DependentUpon>ResourceFileForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WorkAssistantForm.resx">
+      <DependentUpon>WorkAssistantForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Redo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SaveAll.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Undo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Property.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary\ClassLibrary.csproj">
+      <Project>{dfd5350b-25f8-4d43-ba78-ffb7571bc52e}</Project>
+      <Name>ClassLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ControlLibrary\ControlLibrary.csproj">
+      <Project>{7E75FBF0-35C9-44D9-B161-5C46C8720282}</Project>
+      <Name>ControlLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
