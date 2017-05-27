@@ -219,6 +219,7 @@ namespace T008
             sb.AppendLine("    {");
             sb.AppendLine("        void ReadData(DataReader dr);");
             sb.AppendLine("    }");
+            sb.AppendLine("");
 
             //数据类型
             int n = m_dicClassInfos.Count;
@@ -227,7 +228,7 @@ namespace T008
                 kvp.Value.BuildDefine(sb);                
                 if (--n > 0)
                 {
-                    //还有类药导出则继续换行
+                    //还有类要导出则继续换行
                     sb.AppendLine();
                 }
             }

@@ -297,6 +297,9 @@ namespace T008
             }
 
             //加载代码
+            sb.AppendLine("        /// <summary>");
+            sb.AppendLine("        /// 数据信息接口，统一读取信息。");
+            sb.AppendLine("        /// </summary>");
             sb.AppendLine("        public void ReadData(DataReader dr)");
             sb.AppendLine("        {");
             for (int i=0; i< FieldInfos.Count; ++i)
