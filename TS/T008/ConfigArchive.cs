@@ -49,9 +49,13 @@ namespace T008
             m_strConfigFilePath = file;
             m_strSourceFolder = string.Empty;
             m_strExportFolder = string.Empty;
+            m_strBuildNameSpace = string.Empty;
+            m_strBuildPath = string.Empty;
             m_dicEnumInfos.Clear();
+            m_dicClassInfos.Clear();
             m_dicExportInfos.Clear();
 
+            //加载解析
             bool ok = true;
             try
             {
@@ -67,8 +71,7 @@ namespace T008
                 m_strBuildNameSpace = XmlUtil.GetAttribute(config.SelectSingleNode("BuildNameSpace"), "Value").Trim();
                 m_strBuildPath = XmlUtil.GetAttribute(config.SelectSingleNode("BuildPath"), "Value").Trim();
 
-                //获取枚举定义 数据定义 导出配置      
-                //ParseEnums(root.SelectSingleNode("Enums"));
+                //获取枚举定义 数据定义 导出配置
                 ParseDefineFiles(root.SelectSingleNode("DefineFiles"));                
                 ParseExportGroups(root.SelectSingleNode("ExportGroups"));
                 CheckClasses();
