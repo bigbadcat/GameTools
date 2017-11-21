@@ -596,7 +596,8 @@ namespace T008
             string[] fieldname = new string[c];                             //把字段名称数组，用于确定字段索引
             for (int i = 0; i < c; ++i)
             {
-                fieldname[i] = data[2, i + 1].ToString().Trim();
+                object obj = data[2, i + 1];
+                fieldname[i] = obj == null ? string.Empty : obj.ToString().Trim();
             }
 
             ClassInfo cinfo = ConfigArchive.Instance.GetClassInfo(ClassDefine);
