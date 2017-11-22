@@ -45,22 +45,14 @@ namespace T008
         /// <returns>是否加载成功。</returns>
         public bool Load(string file)
         {
-            //清除空数据
-            m_strConfigFilePath = file;
-            m_strSourceFolder = string.Empty;
-            m_strExportFolder = string.Empty;
-            m_strBuildNameSpace = string.Empty;
-            m_strBuildPath = string.Empty;
-            m_dicEnumInfos.Clear();
-            m_dicClassInfos.Clear();
-            m_dicExportInfos.Clear();
-
             //加载解析
             bool ok = true;
+            ClearData();
             try
             {
                 //打开XML文件
                 XmlDocument doc = new XmlDocument();
+                m_strConfigFilePath = file;
                 doc.Load(m_strConfigFilePath);
 
                 //配置
@@ -80,11 +72,26 @@ namespace T008
             catch (Exception e)
             {
                 ok = false;
-                file = string.Empty;
+                ClearData();
                 MainForm.CurForm.Log(e.Message);
             }
 
             return ok;
+        }
+
+        /// <summary>
+        /// 清除数据。
+        /// </summary>
+        public void ClearData()
+        {
+            m_strConfigFilePath = string.Empty;
+            m_strSourceFolder = string.Empty;
+            m_strExportFolder = string.Empty;
+            m_strBuildNameSpace = string.Empty;
+            m_strBuildPath = string.Empty;
+            m_dicEnumInfos.Clear();
+            m_dicClassInfos.Clear();
+            m_dicExportInfos.Clear();
         }
 
         /// <summary>
